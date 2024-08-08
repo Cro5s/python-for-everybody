@@ -5,18 +5,16 @@ You should use input to read a string and float() to convert the string to a num
 '''
 
 def compute_pay(hours, rate):
-    if hours > 40:
-        overtime_hours = hours - 40
-        overtime_rate = rate * 1.5
-        base_pay = (hours - overtime_hours) * rate
-        overtime_pay = overtime_hours * overtime_rate
-        
-        return base_pay + overtime_pay
-    else:
-        return hours * rate
+    return __compute_overtime_pay(hours, rate) if hours > 40 else hours * rate
+
+def __compute_overtime_pay(hours, rate):
+    overtime_hours = hours - 40
+    overtime_rate = rate * 1.5
+    base_pay = (hours - overtime_hours) * rate
+    overtime_pay = overtime_hours * overtime_rate
+
+    return base_pay + overtime_pay
 
 hours = float(input('Enter Hours: '))
 rate = float(input('Enter Rate: '))
-gross_pay = compute_pay(hours, rate)
-
-print('Pay', gross_pay)
+print('Pay', compute_pay(hours, rate))
