@@ -51,6 +51,11 @@ try:
     for span in spans:
         count += 1
         total_sum += int(span.contents[0])
+        # Look at the parts of a tag
+        # print('TAG:', span)
+        # print('URL:', span.get('href', None))
+        # print('Contents:', span.contents[0])
+        # print('Attrs:', span.attrs)
 
 except:
     print(f'{urllib.error}')
