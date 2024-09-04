@@ -58,7 +58,7 @@ try:
         # print('Attrs:', span.attrs)
 
 except:
-    print(f'{urllib.error}')
+    print(urllib.error)
     quit()
 
 print(f'Count {count}')
